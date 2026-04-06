@@ -11,5 +11,8 @@
     "@vercel/node": "^4.0.0",
     "typescript": "^5.0.0",
     "vercel": "latest"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.101.1"
   }
 }
