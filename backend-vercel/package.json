@@ -1,0 +1,15 @@
+{
+  "name": "backend-vercel",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@vercel/node": "^4.0.0",
+    "typescript": "^5.0.0",
+    "vercel": "latest"
+  }
+}
