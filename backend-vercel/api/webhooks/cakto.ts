@@ -99,7 +99,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             return res.status(200).json({ received: true, ignored: true });
         }
 
-        // 5. Atualizar na tabela `profiles` via user_id
+        // 5. Atualiza o plan na tabela `profiles` via user_id
         const { data: updatedProfiles, error: profileError } = await supabase
             .from('profiles')
             .update({ plan: newPlan })
