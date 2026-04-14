@@ -187,7 +187,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             // 7. Gerar Magic Link para acesso imediato
             let accessLink = null;
             try {
-                const appUrl = process.env.APP_URL || 'https://pausapraela.com.br';
+                const appUrl = process.env.APP_URL || 'https://pause-for-her.vercel.app/';
                 const { data: linkData, error: linkError } = await supabase.auth.admin.generateLink({
                     type: 'magiclink',
                     email: email,
