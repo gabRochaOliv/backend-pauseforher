@@ -187,11 +187,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             // 7. Gerar Magic Link para acesso imediato
             let accessLink = null;
             try {
-                const appUrl = process.env.APP_URL || 'https://pause-for-her.vercel.app/';
+                // Rota raiz do app para redirecionamento, removendo barras extras
+                const baseUrl = (process.env.APP_URL || 'https://pause-for-her.vercel.app').replace(/\/$/, '');
+                
                 const { data: linkData, error: linkError } = await supabase.auth.admin.generateLink({
                     type: 'magiclink',
                     email: email,
-                    options: { redirectTo: `${appUrl}/app` }
+                    options: { redirectTo: baseUrl }
                 });
 
                 if (linkError) {
